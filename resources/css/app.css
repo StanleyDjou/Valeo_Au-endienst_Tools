@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+.bg-footer-player {
+    background-image: url(/images/player-footer.png);
+    background-size: auto 100%;
+    background-position: left;
+    background-repeat: no-repeat;
+}
+
+/********** Shop Page Styles **********/
+.shop,
+.all-products {
+    background-image: url("/images/bg-bg.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+.shop .header {
+    background-image: url("/images/shop_hero_bg.jpg");
+    @apply bg-secondary;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    min-height: 550px;
+}
+
+.shop .hero-left-img {
+    background-image: url("/images/shop_hero_img1.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 15px 0 30px 17%;
+    min-height: 200px;
+}
+
+.shop .hero-right-img {
+    background-image: url("/images/img-shop-hero-31.png");
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0;
+    min-height: 200px;
+}
+
+.shop .body {
+    width: 100%;
+    min-height: 600px;
+}
+
+.shop .new_arrivals-box,
+.all-products .new_arrivals-box {
+    @apply border border-secondary-100 border-opacity-10 bg-secondary;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 18px;
+    box-shadow: 0 4px 4px rgba(1, 1, 26, 0.2);
+}
+
+.shop .new_arrivals-box .box-img,
+.all-products .new_arrivals-box,
+.box-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.shop .clubs-box .box-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.shop .categories .box {
+    background-image: url("/images/shop-cat-bg.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 310px;
+}
+
+.shop .categories .box-img {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.shop .slider-btn-active {
+    @apply bg-secondary-2 px-3 !h-auto rounded-md text-white border-none;
+    height: 30px !important;
+    width: 30px !important;
+    margin-bottom: 0;
+}
+.shop .slider-btn-inactive {
+    @apply bg-secondary-200 px-3 !h-auto rounded-md text-white border-none;
+    height: 30px !important;
+    width: 30px !important;
+    margin-bottom: 0;
+}
+
+.all-products [type="radio"]:checked {
+    background-size: 1.3em 1.3em;
+    background-color: transparent;
+    border: 0.125rem solid white;
+}
+
+.all-products [type="checkbox"]:checked {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='darkblue' stroke-width='1.5' width='12' height='17' viewBox='0 0 12 12'%3e %3cpath d='M1 5.917L5.724 10.5 15 1.5'/%3e %3c/svg%3e");
+    background-repeat: no-repeat;
+    @apply border-[0.125rem] border-white bg-transparent rounded-[3px] h-[13px] w-[13px];
+    background-color: white;
+}
+
+.all-products .filter-box {
+    @apply border border-secondary-100 border-opacity-10 rounded-2xl py-5 px-4 mx-3 sm:mx-0;
+}
+
+.all-products .filter-box .radio-div {
+    max-height: 200px;
+    overflow-y: scroll;
+    scrollbar-width: 20px; /* Adjust the width as needed */
+    scrollbar-color: rgb(0 57 183 / var(--tw-bg-opacity))
+        rgb(152 165 231 / var(--tw-bg-opacity));
+}
+
+.all-products .filter-box .radio-div::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+
+.all-products .filter-box .radio-div::-webkit-scrollbar {
+    width: 7px;
+}
+.all-products .filter-box .radio-div::-webkit-scrollbar-track {
+    @apply bg-secondary-200;
+    border-radius: 15px;
+    padding: 2px;
+}
+
+/* Handle */
+.all-products .filter-box .radio-div::-webkit-scrollbar-thumb {
+    @apply bg-secondary-700;
+    border-radius: 15px;
+    scroll-margin: 1px;
+}
+
+/* Handle on hover */
+.all-products .filter-box .radio-div::-webkit-scrollbar-thumb:hover {
+    @apply bg-secondary-900;
+}
+
+.all-products .search-input::placeholder {
+    @apply text-secondary-100;
+}
+/********** End Shop Page Styles **********/
+.shop-banner {
+    background-image: url(/images/img-shop-cta-background.png);
+}
+
+.background {
+    background-image: url(/images/bg-bg.jpg);
+}
+
+[x-cloak] {
+    display: none !important;
+}
+.overlay,
+.cover {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    background: black;
+    opacity: 0.75;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    overflow-y: scroll;
+    z-index: 1000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.modal-header {
+    border-bottom: none;
+}
+.modal-footer {
+    border-top: none;
+}
+.modal-inner {
+    background-color: black;
+    border-radius: 0.5em;
+    max-width: 1000px;
+    width: 1000px;
+    margin: auto;
+}
+
+.modal-inner.modal-sm {
+    max-width: 500px;
+}
+
+
+/* shop details */
+.product-details .new_arrivals-box {
+    @apply border border-secondary-100 border-opacity-10 bg-secondary;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 18px;
+    box-shadow: 0 4px 4px rgba(1, 1, 26, 0.2);
+}
+
+.product-details .new_arrivals-box {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 8px;
+}
+
+.product-details * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Hide scrollbar for WebKit browsers */
+.product-details *::-webkit-scrollbar {
+    display: none;
+}
+
+.competition-details .hero-content {
+    background-image: url("/images/headerbackground@3x.png");
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    min-height: 300px;
+}
+
+select:not([size]) {
+    background-image: url("data:image/svg+xml,%3csvg aria-hidden='true' xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 10 6'%3e %3cpath stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m1 1 4 4 4-4'/%3e %3c/svg%3e");
+}
+
+

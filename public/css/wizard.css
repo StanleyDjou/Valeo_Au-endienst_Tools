@@ -1,0 +1,20 @@
+
+.nav-fill .nav-link{
+    border: 1px solid grey;
+    border-radius: 45px;
+    padding: 5px;
+    margin: 5px;
+}
+
+.form-control {
+    border-radius: 6px;
+}
+.form-label{
+    color: black;
+}
+
+#dashboardForm {
+    overflow: hidden;
+    background-color: #F6F6F5;
+}
+

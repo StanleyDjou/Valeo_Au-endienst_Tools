@@ -1,0 +1,162 @@
+[
+	{
+		"name":"Transport",
+		"occupations":[
+			"lory driver",
+			"taxi man",
+			"truck driver",
+            "Keke",
+            "transfer Cars",
+            "Ambulance",
+            "Bikes"
+		]
+	},{
+		"name":"Graphics and Design",
+		"occupations":[
+			"Cartoons and Comics",
+			"UI and UX designer",
+			"Book Designs",
+			"Serigraphy",
+			"Flyer Designers",
+             "info-graphics",
+			"Product Branding"
+        ]
+	},
+         {
+		"name":"Programming and Tech",
+		"occupations":[
+			"Websites Application",
+			"Mobile Application",
+			"Desktop Application",
+            "computer systems administrator",
+		    "computer systems analyst",
+            "database administrator"
+		]
+	},
+     {
+		"name":"Rental Services and Event planning",
+		"occupations":[
+			"Cars",
+			"Chairs",
+			"Canopies",
+            "Utensils",
+            "Event Planners",
+            "Catering Services"
+		]
+	},
+     {
+        "name":"Maintenance",
+        "occupations":[
+            "Electrician",
+            "Mechanics",
+            "Computer",
+            "Phone",
+            "Television",
+            "Household Appliance",
+            "ATM machine repairer",
+            "audio and video equipment technician",
+            "air conditioning mechanic",
+            "automotive mechanic",
+            "camera repairer",
+            "elevator repairer"
+        ]
+    },
+        {
+		"name":"Suppliers",
+		"occupations":[
+			"Water",
+			"Gas",
+			"Drinks",
+            "Sand"
+
+		]
+	},
+        {
+		"name":"Marketing",
+		"occupations":[
+			"Digital Marketing",
+			"Offline Marketing"
+	 	]
+	  },
+	{
+		"name":"Sanitation and Laundry",
+		"occupations":[
+			"Cleaners",
+			"Laundry Services"
+
+		]
+	},
+	{
+		"name":"Health",
+		"occupations":[
+			"Nurse",
+			"Pharmacist",
+			"Gynacologyst",
+            "Herbalist",
+            "veterinarian"
+		]
+	},
+        {
+		"name":"Construction",
+		"occupations":[
+			"Capentar",
+			"Furniture",
+			"Door Repairer",
+            "Builder",
+			"Painter",
+			"Wilders",
+            "Tiolet Drainers",
+			"Craftsmen",
+            "air conditioning installer",
+            "automotive glass installer",
+            "cellular equipment installer",
+            "electrical installer",
+            "electrical power-line installer",
+            "elevator installer",
+            "fire alarm system installer",
+			"Maneuf"
+		]
+	},
+         {
+		"name":"Bueaty",
+		"occupations":[
+			"Pedicure and Manicure",
+			"Babers",
+			"Hair-dressers",
+            "Makeup Artist"
+		]
+	},
+        {
+		"name":"Agriculture and Food ",
+		"occupations":[
+			"agricultural engineer",
+			"Farmer",
+            "agricultural worker",
+            "baker",
+            "hunter",
+            "cafeteria cook"
+		]
+	},
+         {
+		"name":"Network",
+		"occupations":[
+			"Internet",
+			"Cable Network",
+            "communications equipment operator"
+		]
+	},
+        {
+		"name":"Tutors and Teachers",
+		"occupations":[
+			"Primary",
+			"Secondary",
+            "University"
+		]
+	},
+        {
+		"name":"Sports and Fitness",
+		"occupations":[
+			"athletic trainer"
+		]
+	}
+]
