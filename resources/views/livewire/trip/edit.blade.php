@@ -48,57 +48,6 @@
                 </div>
 
 
-                @if ($type == 'video')
-                    <div class=" form-group col-12">
-                        <label>Url<span class="text-danger">*</span></label>
-                        <input type="text" wire:model="path" class="form-control">
-                        @error('path') <span class="error"> {{ $message }} </span> @enderror
-                    </div>
-
-                    <label>Preview</label>
-                    <div class=" form-group col-12">
-                        <div class="row">
-                            @if (isset($path))
-                                <div class="col-8 mx-1 mb-1" >
-                                    <iframe src="{{ $path }}" width="100%" height="400px"></iframe>
-                                </div>
-                            @endif
-
-                            @if ($isEditMode && !isset($path))
-                                <div class="col-8  mx-1 mb-1">
-                                    <iframe src="{{ $blog->url() }}" width="100%" height="400px"></iframe>
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-
-                @endif
-
-                @if ($type == 'podcast')
-                    <div class=" form-group col-12">
-                        <label>Url<span class="text-danger">*</span></label>
-                        <input type="text" wire:model="path" class="form-control">
-                        @error('path') <span class="error"> {{ $message }} </span> @enderror
-                    </div>
-
-                    <label>Preview</label>
-                    <div class=" form-group col-12">
-                        <div class="row">
-                            @if (isset($path))
-                                <div class="col-8 mx-1 mb-1" >
-                                    {!! $path !!}
-                                </div>
-                            @endif
-
-                            @if ($isEditMode && !isset($path))
-                                <div class="col-8  mx-1 mb-1">
-                                    {!! $blog->path !!}
-                                </div>
-                            @endif
-                        </div>
-                    </div>
-                @endif
-
                 <div class=" form-group col-12">
                     <label>Cover Image<span class="text-danger">*</span></label>
                     <div class="row">
