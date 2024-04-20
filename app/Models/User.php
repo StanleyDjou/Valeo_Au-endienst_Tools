@@ -25,17 +25,11 @@ class User extends Authenticatable
         'first_name',
         'last_name',
         'status',
-        'role',
         'email',
         'phone',
-        'company',
-        'website',
-        'city_id',
-        'region_id',
-        'address',
         'password',
         'profile',
-        'bio'
+        'admin'
     ];
 
     /**
@@ -58,24 +52,7 @@ class User extends Authenticatable
         'password' => 'hashed',
     ];
 
-    public function requests(){
-        return $this->hasMany(Request::class, 'user_id');
-    }
-    public function portfolios(){
-        return $this->hasMany(Portfolio::class, 'user_id');
-    }
 
-    public function city(){
-        return $this->belongsTo(Cities::class , "city_id");
-    }
-
-    public function region(){
-        return $this->belongsTo(Regions::class , "region_id");
-    }
-
-    public function skills(){
-        return $this->belongsToMany(UserSkill::class , "user_skills", "user_id");
-    }
 
     public function isAdmin(){
         return $this->admin === 1;
@@ -83,14 +60,6 @@ class User extends Authenticatable
 
     public function getProfilePictureAttribute(){
         return asset('storage/'.$this->profile);
-    }
-
-    public function services(){
-        return $this->hasMany(UserService::class, 'user_id');
-    }
-
-    public function portfolio(){
-        return $this->hasMany(Portfolio::class, 'user_id');
     }
 
 

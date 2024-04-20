@@ -5,7 +5,7 @@
     <meta charset="utf-8"/>
     <title>@yield('pageTitle', config('app.name'))</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="{{asset('be_assets')}}/images/log.jpeg
+    <link rel="shortcut icon" href="{{asset('be_assets')}}/images/valeo-small.png"
 ">
 
     <link href="{{asset('be_assets')}}/css/bootstrap.min.css" rel="stylesheet" type="text/css"
@@ -73,7 +73,7 @@
 
         .modal-inner {
             background-color: white;
-            border-top: 20px #026BCF solid;
+            border-top: 20px #797979 solid;
             border-radius: 0.5em;
             max-width: 1000px;
             width: 1000px;
@@ -113,9 +113,9 @@
         
 
             <!-- Topbar Start -->
-            <div class="navbar-custom bg-primary">
+            <div class="navbar-custom bg-white">
 
-                <ul class="list-unstyled topnav-menu text-white float-right mb-0">
+                <ul class="list-unstyled topnav-menu  float-right mb-0">
 
                     <livewire:notifications/>
         
@@ -123,7 +123,7 @@
                         <a class="nav-link dropdown-toggle nav-user mr-0" data-toggle="dropdown" href="#" role="button"
                            aria-haspopup="false" aria-expanded="false">
                             <img src="{{isset(auth()->user()->profile) ? auth()->user()->profile_picture : asset('be_assets/images/users/avatar-1.jpg')}}" alt="user-image" class="rounded-circle">
-                            <span class="pro-user-name ml-1 text-white">
+                            <span class="pro-user-name ml-1">
                                             {{auth()->user()->name}}
                                     </span>
                         </a>
@@ -135,13 +135,6 @@
         
                         </div>
                     </li>
-                    <li class=" d-none d-md-flex align-items-center p-2">
-                        <a href="" >
-                            <button  class="btn border mx-2 p-2 mt-2">
-                                <i class="fa fa-globe mx-2"></i> ENG <i class="fa fa-chevron-down mx-2  py-1  "></i>
-                            </button>
-                        </a>
-                    </li>
         
                 </ul>
         
@@ -150,12 +143,12 @@
                     <a href="{{route('admin.dashboard')}}" class="logo text-center logo-dark">
                                 <span class="logo-lg">
         
-                                    <img src="{{asset('be_assets')}}/images/Layer 2.png" alt="" height="40">
+                                    <img src="{{asset('be_assets')}}/images/valeo-logo.png" alt="" height="40">
                                     <!-- <span class="logo-lg-text-dark">Simple</span> -->
                                 </span>
                         <span class="logo-sm">
                                     <!-- <span class="logo-lg-text-dark">S</span> -->
-                                    <img src="{{asset('be_assets')}}/images/log.jpeg" alt="" height="22">
+                                    <img src="{{asset('be_assets')}}/images/valeo-small.png" alt="" height="22">
         
                                 </span>
                     </a>
@@ -163,42 +156,30 @@
                     <a href="{{route('admin.dashboard')}}" class="logo text-center logo-light">
                                 <span class="logo-lg">
         
-                                    <img src="{{asset('be_assets')}}/images/Layer 2.png" alt="" height="60">
+                                    <img src="{{asset('be_assets')}}/images/valeo-logo.png" alt="" height="60">
         
                                     <!-- <span class="logo-lg-text-light">Simple</span> -->
                                 </span>
                         <span class="logo-sm">
                                     <!-- <span class="logo-lg-text-light">S</span> -->
-                                    <img src="{{asset('be_assets')}}/images/log.jpeg" alt="" height="22">
+                                    <img src="{{asset('be_assets')}}/images/valeo-small.png" alt="" height="22">
         
                                 </span>
                     </a>
                 </div>
-        
+
                 <ul class="list-unstyled topnav-menu  topnav-menu-left m-0">
                     <li>
-                        <button class="button-menu-mobile text-white">
+                        <button class="button-menu-mobile ">
                             <i class="mdi mdi-menu"></i>
                         </button>
                     </li>
-                    <li class=" d-none d-md-flex align-items-center p-2">
-                        <a href="" >
-                            <button  class="btn border mx-2 p-2 mt-2">
-                                <i class="fa fa-plus mx-2"></i> Add <i class="fa fa-chevron-down mx-2 px-2 py-1  border-left"></i>
-                            </button>
-                        </a>
-                    </li>
-                    <li class="d-none d-md-flex align-items-center p-2">
-                        <a href="{{route('findpro')}}" >
-                            <button  class="btn bg-orange-l mx-2 p-2 mt-2">
-                                <i class="fa fa-search"></i> Search for Workers 
-                            </button>
-                        </a>
-                    </li>
+
                 </ul>
+        
             </div>
             <!-- end Topbar --> <!-- ========== Left Sidebar Start ========== -->
-            <div class="left-side-menu bg-primary ">
+            <div class="left-side-menu ">
         
                 <div id="sidebar-menu">
         
@@ -213,13 +194,14 @@
                         <li>
                             <a href="javascript: void(0);">
                                 <i class="fa fa-industry"></i>
-                                <span>Manage Business</span>
+                                <span>Manage Trips</span>
                                 <span class="menu-arrow"></span>
                             </a>
                             <ul class="nav-second-level " style="">
-                                <li><a href="{{route('business.index')}}"><i class=""></i>All Businesses</a></li>
-                                <li><a href="{{route('skills')}}"><i class=""></i>Skills</a></li>
-                                <li><a href="{{route('requests')}}"><i class=""></i>Requests</a></li>
+                                <li><a href="{{route('trip.index')}}"><i class=""></i>All Trips</a></li>
+                                <li><a href="{{route('skills')}}"><i class=""></i>Planned Trips</a></li>
+                                <li><a href="{{route('skills')}}"><i class=""></i>Ongoing Trips</a></li>
+                                <li><a href="{{route('requests')}}"><i class=""></i>Past Trips</a></li>
                             </ul>
                         </li>
         
@@ -297,11 +279,11 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
         
-            <div class="content-page">
+            <div class="content-page" style="background-color: #f1f1f1 !important">
                 <div class="content">
         
                     <!-- Start container-fluid -->
-                    <div class="container-fluid">
+                    <div class="container-fluid" style="background-color: #f1f1f1 !important">
                         @yield('content')
                         {{$slot ?? ""}}
                     </div>

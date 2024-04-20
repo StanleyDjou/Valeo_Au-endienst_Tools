@@ -44,7 +44,7 @@ use Illuminate\Support\Facades\Route;
             Route::get('/users',  [\App\Http\Livewire\Users\Index::class, '__invoke'])->name('index.user');
             Route::get('/skills',  [\App\Http\Livewire\Skills\Index::class, '__invoke'])->name('skills');
             Route::get('/find-pro',  [\App\Http\Livewire\Requests\Findpro\Index::class, '__invoke'])->name('findpro');
-            Route::get('/bussiness',  [\App\Http\Livewire\Business\Index::class, '__invoke'])->name('business.index');
+            Route::get('/trip',  [\App\Http\Livewire\Trip\Index::class, '__invoke'])->name('trip.index');
             Route::get('/dashboard',  [\App\Http\Livewire\Dashboard::class, '__invoke'])->name('admin.dashboard');
             Route::get('/portfolio/{portfolio}',  [\App\Http\Livewire\Users\Portfolio\Detail::class, '__invoke'])->name('portfolio.detail');
 
@@ -62,4 +62,3 @@ use Illuminate\Support\Facades\Route;
                 Route::post('assign_role',  [RoleController::class, 'rolesStore'])->name('roles.assign.post')->middleware(['permission:manage_roles']);
             });
     });
-

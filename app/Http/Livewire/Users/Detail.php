@@ -13,7 +13,7 @@ class Detail extends Component
     public $user_id;
     public $tab = 0;
 
-    public $menus = ['Services', 'Portfolios', 'Requests Sent', 'Requests Received'];
+    public $menus = ['Past Trips', 'Future Trips'];
 
     public function mount(User $user, Request $request){
         $this->user = $user;

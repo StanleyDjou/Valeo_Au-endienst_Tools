@@ -24,13 +24,6 @@ class Edit extends Component
     public $password = '';
     public $user;
     public $status;
-    public $company = '';
-    public $address = '';
-    public $city_id ='';
-    public $region_id = '';
-    public $category = '';
-    public $sub_category = '';
-    public $website = '';
     public $isEditMode = false;
 
     public $saved = false;
@@ -46,17 +39,7 @@ class Edit extends Component
             $this->last_name = $this->user->last_name;
             $this->email = $this->user->email;
             $this->phone = $this->user->phone;
-            $this->role = $this->user->role;
             $this->status = $this->user->status;
-            if($this->role == 'worker'){
-                $this->company = $this->user->company;
-                $this->address = $this->user->address;
-                $this->city_id = $this->user->city_id;
-                $this->region_id = $this->user->region_id;
-                $this->category= $this->user->category;
-                $this->sub_category = $this->user->sub_category;
-                $this->website = $this->user->website;
-            }
 
         }
     }
@@ -71,23 +54,12 @@ class Edit extends Component
             "last_name" => 'required',
             "email" => 'email',
             "phone" => 'required',
-            "role" => 'required',
             "status" => 'required',
         ];
 
         if(!$this->isEditMode){
             $rule["email"] = 'required|email|unique:users,email';
             $rule["password"] = 'required';
-        }
-
-        if(!$this->role == 'worker'){
-            $rules["company"] = 'required';
-            $rules["address"] = 'required';
-            $rules["city"] = 'required';
-            $rules["region"] = 'required';
-            $rules["website"] = 'null';
-            $rules["category"] = 'required';
-            $rules["sub_category"] = 'required';
         }
         return $rules;
     }
@@ -124,21 +96,11 @@ class Edit extends Component
                 'last_name'=>$this->first_name,
                 'phone'=>$this->phone,
                 'profile'=>$data['profile'],
-                'status'=>$this->status,
-                'role'=>$this->role,
+                'admin'=>$this->status,
                 'email'=>$this->email,
                 'password'=>Hash::make($this->password)
             ]);
             $this->user->refresh();
-
-            if($this->role == 'worker' && !$this->isEditMode)
-            $this->user->update([
-                "company"=>$this->company,
-                "address"=>$this->address,
-                "city_id"=>$this->city_id,
-                "region_id"=>$this->region_id,
-                "website"=>$this->website,
-            ]);
             $this->emit("success", "User updated successfully!");
         }
         $this->saved = true;

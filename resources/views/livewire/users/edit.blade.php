@@ -7,25 +7,25 @@
             <div class="d-flex ">
                 <div class="form-check align-items-center" style="margin-right: 20px">
                     <div class="">
-                        <input class="form-check-input" {{$isEditMode ? 'disabled' : ''}} value="worker" wire:model='role'
+                        <input class="form-check-input" {{$isEditMode ? 'disabled' : ''}} value="0" wire:model='status'
                         type="radio" name="flexRadioDefault" id="flexRadioDefault1">
                     </div>
     
                     <label class="form-check-label " for="flexRadioDefault1">
                         <div class="">
-                            <p class="font-weight-bold font-16 text-dark ms-2">Worker</p>
+                            <p class="font-weight-bold font-16 text-dark ms-2">Normal</p>
                         </div>
                     </label>
                 </div>
                 <div class="form-check align-items-center" style="margin-right: 20px">
                     <div class="">
-                        <input class="form-check-input" {{$isEditMode ? 'disabled' : ''}}  value="client" wire:model='role'
+                        <input class="form-check-input" {{$isEditMode ? 'disabled' : ''}}  value="1" wire:model='status'
                         type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                     </div>
     
                     <label class="form-check-label " for="flexRadioDefault2">
                         <div class="">
-                            <p class="font-weight-bold font-16 text-dark ms-2">Client</p>
+                            <p class="font-weight-bold font-16 text-dark ms-2">Administrator</p>
                         </div>
                     </label>
                 </div>
@@ -95,83 +95,11 @@
                     <i class="fa fa-spinner d-none" wire:loading.class.remove="d-none"   wire:target="generate"></i>
                     <i class="fa fa-lock"></i> Generate Strong Password</button>
             </div>
-
-         
-                <div class=" col-12 d-flex align-items-center">
-                    <h6 class="me-2">Status : </h6>
-                    <div style="width: 5px"></div>
-                    <div class="form-check form-switch ">
-                        <input class="form-check-input ms-2" type="checkbox" wire:model = 'status' role="switch" id="flexSwitchCheckChecked" >
-                        <label class="form-check-label" for="flexSwitchCheckChecked">{{$status == 0 ? 'Inactive' : 'Active'}}</label>
-                    </div>
-                </div>
-    
-                <div class=" col-12 mt-4 d-flex align-items-center">
-                    <div class="form-check form-switch ">
-                        <input class="form-check-input ms-2" type="checkbox" wire:model = 'check' role="switch" id="emailcount" checked >
-                        <label class="form-check-label" for="emailcount">Send account details via Email</label>
-                    </div>
-                </div>
      
 
 
         </div>
     </div>
-
-    @if ($role == 'worker')
-        <div class="mt-4 p-4 row rounded-lg bg-white">
-            <h4>Business Information</h4>
-            <div class="col-12">
-                <div class="form-group">
-                    <label class="font-15 font-weight-bold text-dark" for="">Company Name <span class="required-field">*</span></label>
-                    <input type="text" wire:model="company" class="form-control" >
-                    @error('company') <span class="error"> {{ $message }} </span> @enderror
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group">
-                    <label class="font-15 font-weight-bold text-dark" for="">Address <span class="required-field">*</span></label>
-                    <input type="text" wire:model="address" class="form-control" >
-                    @error('address') <span class="error"> {{ $message }} </span> @enderror
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="form-group">
-                    <label class="font-15 font-weight-bold text-dark" for="">City <span class="required-field">*</span></label>
-                    <input type="text" wire:model="city_id" class="form-control" >
-                    @error('city_id') <span class="error"> {{ $message }} </span> @enderror
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="form-group">
-                    <label class="font-15 font-weight-bold text-dark" for="">Region <span class="required-field">*</span></label>
-                    <input type="text" wire:model="region_id" class="form-control" >
-                    @error('region_id') <span class="error"> {{ $message }} </span> @enderror
-                </div>
-            </div>
-            {{-- <div class="col-12 col-lg-6">
-                <div class="form-group">
-                    <label class="font-15 font-weight-bold text-dark" for="">Category <span class="required-field">*</span></label>
-                    <input type="text" wire:model="category" class="form-control" >
-                    @error('category') <span class="error"> {{ $message }} </span> @enderror
-                </div>
-            </div>
-            <div class="col-12 col-lg-6">
-                <div class="form-group">
-                    <label class="font-15 font-weight-bold text-dark" for="">Sub Category <span class="required-field">*</span></label>
-                    <input type="text" wire:model="sub_category" class="form-control" >
-                    @error('sub_catergory') <span class="error"> {{ $message }} </span> @enderror
-                </div>
-            </div> --}}
-            <div class="col-12 ">
-                <div class="form-group">
-                    <label class="font-15 font-weight-bold text-dark" for="">Website <span class="required-field">*</span></label>
-                    <input type="text" wire:model="website" class="form-control" >
-                    @error('website') <span class="error"> {{ $message }} </span> @enderror
-                </div>
-            </div>
-        </div>
-    @endif
 
     <button type="button" class="btn bt-sm btn-primary border-0 mt-5" {{$saved? 'disabled' : ''}} wire:click = 'save'>
         {{$isEditMode ? 'Update User' : 'Create New User'}}

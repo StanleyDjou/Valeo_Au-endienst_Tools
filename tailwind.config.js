@@ -17,7 +17,7 @@ export default {
             colors: {
                 'secondary': '#0488DD',
                 'secondary-2': '#0488DD',
-                'secondary-50': '#026BCF',
+                'secondary-50': '#797979',
                 'secondary-100': '#C1C8F0',
                 'secondary-400': '#2A9AE2',
                 'secondary-200': '#98A5E7',

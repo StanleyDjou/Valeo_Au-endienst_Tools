@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class ChangePassword extends Component
 {
     public $showModal = false;
-    public $user;
+    public User $user;
     public $current_password = '';
     public $new_password = '';
     public $repeat_password = '';

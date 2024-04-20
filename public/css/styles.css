@@ -2852,7 +2852,7 @@ nav a:hover {
 	border-bottom: 1px solid #e4e8ec;
     display: inline-block;
     float: left;
-    color:#333c56;
+    color:#797979;
     -webkit-transition: all 0.3s ease 0s;
     -moz-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
@@ -3098,7 +3098,7 @@ nav a {
     height: 3em;
     padding: 1em 0;
     text-align: center;
-    color: #b5b5b5;
+    color: black;
     -webkit-transition: color .3s;
     transition: color .3s
 }
@@ -3194,7 +3194,7 @@ nav a {
     border: 2px solid #e3ebf3 !important;
 }
 .header-fixed .nav-menu.nav-menu-social>li.add-listing.light a {
-    background:#041b2d;
+    background:#797979;
     border-color:#041b2d !important;
 }
 
