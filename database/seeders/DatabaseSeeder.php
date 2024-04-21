@@ -42,15 +42,5 @@ class DatabaseSeeder extends Seeder
             'value' => "Stollberg Erzgeb",
         ]);
 
-
-
-        $this->call(PermissionsSeeder::class);
-        $this->call(JobSeeder::class);
-        $this->call(RoleSeeder::class);
-        $this->call(RolePermissionSeeder::class);
-        $this->call(LocationSeerder::class);
-        $this->call(UserPermissionSeeder::class);
-        $this->call(UserRoleSeeder::class);
-
     }
 }
