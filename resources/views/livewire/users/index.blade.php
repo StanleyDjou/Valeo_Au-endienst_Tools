@@ -2,11 +2,10 @@
     <div class="d-flex mb-5 justify-content-between align-items-center">
         <h4 class="text-capitalize">Manage Users</h4>
 
-            <button wire:click.prevent="$emitTo('users.edit','load')" class="btn btn-primary text-white"
-                    wire:loading.attribute='disabled'>
+            <a href="{{route('edit.user')}}" class="btn btn-primary text-white">
                 <i class="fa fa-spinner d-none" wire:loading.class.remove="d-none" wire:target="load"></i>
                 Add New User
-            </button>
+            </a>
 
     </div>
 

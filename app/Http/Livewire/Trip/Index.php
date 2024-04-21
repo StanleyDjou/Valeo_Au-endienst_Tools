@@ -42,7 +42,7 @@ class Index extends Component
     protected function getBaseQuery()
     {
         if(isset($this->trip_state)){
-            return Trip::query()->select('trips.*')->where('state', $this->state);
+            return Trip::query()->select('trips.*')->where('state', $this->trip_state);
         }
         return Trip::query()->select('trips.*');
         

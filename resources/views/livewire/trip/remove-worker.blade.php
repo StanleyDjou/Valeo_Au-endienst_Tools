@@ -9,12 +9,12 @@
     >
         <div class="modal-inner">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Delete Trip</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Delete User From Trip</h5>
             </div>
             <div class="modal-body ">
-                 <p class="text-center"> Are you sure you want to delete this Trip ?</p>
-                @if(isset($trip))
-                 <p class="text-center"> Title : <span>{{$trip->title}}</span></p>
+                 <p class="text-center"> Are you sure you want to delete this User from this Trip ?</p>
+                @if(isset($user))
+                 <p class="text-center"> Name : <span>{{$user->name}}</span></p>
                 @endif
             </div>
 

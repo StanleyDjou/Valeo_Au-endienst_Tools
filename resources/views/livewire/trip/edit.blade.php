@@ -9,7 +9,7 @@
     >
         <div class="modal-inner">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Add {{$type}} blog</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Add Trip</h5>
             </div>
             <div class="modal-body row">
                 <div class=" form-group col-12">
@@ -19,21 +19,30 @@
                 </div>
 
                 <div class=" form-group col-12">
-                    <label>Category<span class="text-danger">*</span></label>
-                    <select wire:model="category_id" class="form-control">
-                        <option value="">Select Category</option>
-                        @foreach ($categories as $category)
-                            <option value="{{$category->id}}">{{$category->name}}</option>
-                        @endforeach
-
-                    </select>
-                    @error('category_id') <span class="error"> {{ $message }} </span> @enderror
+                    <label>Location<span class="text-danger">*</span></label>
+                    <input type="text" wire:model="location" wire:change='add_site' class="form-control">
+                    @error('location') <span class="error"> {{ $message }} </span> @enderror
                 </div>
 
+                <div class="form-group col-6">
+                    <a href="{{$location_site}}" class="btn btn-primary form-control" target="_blank">View Itinary</a>
+                </div>
 
+                <div class="form-group col-6">
+                    <a href="{{$booking_site}}" class="btn btn-secondary form-control" target="_blank">Hotels In This Location</a>
+                </div>
 
-
-
+                <div class=" form-group col-12">
+                    <label>Distance(In Km)<span class="text-danger">*</span></label>
+                    <input type="number" wire:model="distance" class="form-control" placeholder="Please enter the distance of the track">
+                    @error('distance') <span class="error"> {{ $message }} </span> @enderror
+                </div>
+                <div class=" form-group col-12">
+                    <label>Price/Person(In Euro)<span class="text-danger">*</span></label>
+                    <input type="number" wire:model="hotel_price" class="form-control" placeholder="Please enter the price of the hotel see on the site">
+                    @error('hotel_price') <span class="error"> {{ $message }} </span> @enderror
+                </div>
+        
                 <div class=" form-group col-12">
                     <label>Description<span class="text-danger">*</span></label>
                     <x-wysiwyg
@@ -47,34 +56,16 @@
                     @error('description') <span class="error"> {{ $message }} </span> @enderror
                 </div>
 
-
                 <div class=" form-group col-12">
-                    <label>Cover Image<span class="text-danger">*</span></label>
-                    <div class="row">
-                        @if (isset($image))
-                            <div class="col-3 card mx-1 mb-1">
-                                <img class="img-fluid p-2" src="{{ $image->temporaryUrl() }}" >
-                            </div>
-                        @endif
-
-                        @if ($isEditMode && !isset($image))
-                            <div class="col-3 card mx-1 mb-1">
-                                <img class="img-fluid p-2" src="{{ $blog->coverImage() }}" >
-                            </div>
-                        @endif
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Select Image</label>
-                        <input type="file" class="form-control" wire:model="image">
-                        <div wire:loading wire:target="image">Uploading ...</div>
-                        @error('image') <span class="error">{{ $message }}</span> @enderror
-                    </div>
+                    <label>Beginn Datum<span class="text-danger">*</span></label>
+                    <input type="date" onClick="this.showPicker" wire:model="start_date" class="form-control">
+                    @error('start_date') <span class="error"> {{ $message }} </span> @enderror
                 </div>
 
                 <div class=" form-group col-12">
-                    <label>Date<span class="text-danger">*</span></label>
-                    <input type="date" onClick="this.showPicker" wire:model="date" class="form-control">
-                    @error('date') <span class="error"> {{ $message }} </span> @enderror
+                    <label>End Datum<span class="text-danger">*</span></label>
+                    <input type="date" onClick="this.showPicker" wire:model="end_date" class="form-control">
+                    @error('end_date') <span class="error"> {{ $message }} </span> @enderror
                 </div>
 
             </div>

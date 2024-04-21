@@ -197,11 +197,11 @@
                                 <span>Manage Trips</span>
                                 <span class="menu-arrow"></span>
                             </a>
-                            <ul class="nav-second-level " style="">
+                            <ul class="nav-second-level" style="">
                                 <li><a href="{{route('trip.index')}}"><i class=""></i>All Trips</a></li>
-                                <li><a href="{{route('skills')}}"><i class=""></i>Planned Trips</a></li>
-                                <li><a href="{{route('skills')}}"><i class=""></i>Ongoing Trips</a></li>
-                                <li><a href="{{route('requests')}}"><i class=""></i>Past Trips</a></li>
+                                <li><a href="{{route('trip.index', ['trip_state' => 'planned'])}}"><i class=""></i>Planned Trips</a></li>
+                                <li><a href="{{route('trip.index', ['trip_state' => 'ongoing'])}}"><i class=""></i>Ongoing Trips</a></li>
+                                <li><a href="{{route('trip.index', ['trip_state' => 'passed'])}}"><i class=""></i>Past Trips</a></li>
                             </ul>
                         </li>
         
@@ -214,42 +214,11 @@
                             <ul class="nav-second-level " style="">
                                 <li><a href="{{route('edit.user')}}"><i class=""></i>Add User</a></li>
                                 <li><a href="{{route('index.user')}}"><i class=""></i>All Users</a></li>
-                                <li><a href="{{route('index.user', ['type'=>'worker'])}}"><i class=""></i>Workers</a></li>
-                                <li><a href="{{route('index.user', ['type'=>'client'])}}"><i class=""></i>Clients</a></li>
                             </ul>
                         </li>
 
-                        <li>
-                            <a href="javascript: void(0);">
-                                <i class="fa fa-list"></i>
-                                <span>Categories</span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <ul class="nav-second-level " style="">
-    
-                                <li><a href="{{route('categories',['type'=>'blog'])}}"><i class=""></i>Blogs
-                                        Categories</a></li>
-                                <li><a href="{{route('categories',['type'=>'faq'])}}"><i class=""></i>FAQ
-                                        Categories</a></li>
-    
-                            </ul>
-                        </li>
 
-                        <li>
-                            <a href="javascript: void(0);">
-                                <i class="fa fa-registered"></i>
-                                <span>Blogs</span>
-                                <span class="menu-arrow"></span>
-                            </a>
-                            <ul class="nav-second-level " style="">
-                                    <li><a href="{{route('blogs',['type'=>'text'])}}"><i class=""></i>Blog</a></li>
-                                    <li><a href="{{route('blogs',['type'=>'video'])}}"><i class=" "></i>Video Blog</a>
-                                    </li>
-                            </ul>
-                        </li>
-
-                        <li><a href="{{route('faqs.admin')}}"><i class="fa fa-question-circle"></i><span>FAQs</span> </a></li>
-                        <li><a href="{{route('testimonial')}}"><i class="fa fa-comments"></i><span>Testimonials</span> </a></li>
+                        <li><a href="{{route('constant.index')}}"><i class="fa fa-question-circle"></i><span>Constants</span> </a></li>
 
                         <li>
                             <a href="javascript: void(0);">
@@ -322,7 +291,7 @@
 <script src="{{asset('be_assets')}}/js/app.min.js"></script>
 <script src="{{asset('be_assets/js/toastr.min.js') }}"></script>
 <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
-<script src="https://cdn.tiny.cloud/1/o5hnd9kr5x850u6dajws5zd4nhm8pk8vobbhdheqjhxqp5ov/tinymce/6/tinymce.min.js"
+<script src="https://cdn.tiny.cloud/1/s8i05r191jbb0uet8083xhpvoabmrj813lvht3pb2uwajslv/tinymce/6/tinymce.min.js"
         referrerpolicy="origin"></script>
 
 @livewireScripts

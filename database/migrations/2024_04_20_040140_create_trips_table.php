@@ -14,10 +14,14 @@ return new class extends Migration
         Schema::create('trips', function (Blueprint $table) {
             $table->id();
             $table->string('title');
+            $table->string('location');
+            $table->integer('hotel_price')->nullable();
+            $table->integer('distance')->nullable();
             $table->text('description');
             $table->dateTime('start_date');
             $table->dateTime('end_date');
             $table->enum('state' ,['passed', 'ongoing', 'planned'])->default('planned');
+
             $table->timestamps();
         });
     }

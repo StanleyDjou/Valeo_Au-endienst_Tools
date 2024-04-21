@@ -6,31 +6,35 @@
             <tr>
                 <th>#</th>
                 <th>Title</th>
-                <th>Started On</th>
-                <th></th>
+                <th>Location</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Status</th>
+                <th>Role</th>
             </tr>
             </thead>
             <tbody>
-            @forelse($services as $k=>$service)
+            @forelse($trips as $k=>$trip)
                 <tr wire:key="{{$k}}">
                     <td>{{$loop->index + 1}}</td>
                     <td>
-                        {{$service->title}}
-                    </td>
-                    <td>
-                        {{$service->created_at}}
-                    </td>
-                    <td>
-                        <div class="button-list">
-                            <a href="{{route('service.detail', $service)}}" class="btn btn-primary"><i
-                                class="fa fa-eye"></i> </a>
+                        <div class="d-flex">
+                            {{$trip->trip->title}}
                         </div>
                     </td>
-
+                    <td>
+                        {{$trip->trip->location}}
+                    </td>
+                    <td>
+                        {{$trip->trip->start_date}}
+                    </td>
+                    <td>{{$trip->trip->end_date}} </td>
+                    <td> <div class="p-2 rounded badge badge-success ">{{$trip->trip->state}}</div> </td>
+                    <td>{{$trip->role}}</td>
                 </tr>
             @empty
                 <tr>
-                    <td colspan="8" class=" text-center">No Service Found</td>
+                    <td colspan="8" class=" text-center">No Trip Found</td>
                 </tr>
             @endforelse
 

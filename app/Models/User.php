@@ -62,6 +62,10 @@ class User extends Authenticatable
         return asset('storage/'.$this->profile);
     }
 
+    public function trips(){
+        return $this->hasMany(UserTrip::class, 'user_id');
+    }
+
 
 
 }

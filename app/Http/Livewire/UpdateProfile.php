@@ -22,7 +22,6 @@ class UpdateProfile extends Component
     protected $listeners = ['profileUpdated'=>'$refresh'];
     public function mount(){
         $this->user = auth()->user();
-        $this->middle_name = auth()->user()->middle_name;
         $this->phone = auth()->user()->phone;
         $this->email = auth()->user()->email;
         $this->title = auth()->user()->name;

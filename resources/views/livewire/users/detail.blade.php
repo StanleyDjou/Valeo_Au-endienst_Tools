@@ -9,19 +9,7 @@
                 </div>
                 <div class="col-12 col-md-6">
                     <span>
-                        <h4>{{$user->first_name}}</h4>
-                        <li class="text-primary font-weight-bold">{{ucfirst($user->role)}}</li>
-                        <div class="d-flex mt-2">
-                            <button class="btn border border-primary rounded  text-primary">
-                                Edit
-                            </button>
-                            <button class="mx-1 btn btn-warning ">
-                                Suspend
-                            </button>
-                            <button class="btn btn-danger ms-2">
-                                Delete
-                            </button>
-                        </div>
+                        <h4>{{$user->name}}</h4>
 
                     </span>
                 </div>
@@ -30,7 +18,7 @@
                         <div class="d-flex align-items-center ">
                             <p class="font-weight-bold font-16 text-dark">Status</p>
                             <div class=" p-2 mx-2 rounded-lg badge badge-{{$user->status == '1' ? 'success' : 'processing'}}" style="margin-top: -5px">
-                                {{$user->status == '1' ? 'Active' : 'Inactive'}}
+                                {{$user->status == '1' ? 'Admin' : 'Worker'}}
                             </div>
                         </div>
                         <div class="d-flex align-items-center my-2">
@@ -40,14 +28,6 @@
                         <div class="d-flex align-items-center ">
                             <p class="font-weight-bold font-16 text-dark">Phone :</p>
                             <p class="font-16 mx-2 text-dark">{{$user->phone}}</p>
-                        </div>
-                        <div class="d-flex align-items-center my-2">
-                            <p class="font-weight-bold font-16 text-dark">Address :</p>
-                            <p class="font-16 mx-2 text-dark">{{$user->address}}</p>
-                        </div>
-                        <div class="d-flex align-items-center my-2">
-                            <p class="font-weight-bold font-16 text-dark">Website :</p>
-                            <p class="font-16 mx-2 text-dark">{{$user->website}}</p>
                         </div>
                         <div class="d-flex align-items-center my-2">
                             <p class="font-weight-bold font-16 text-dark">Joined On :</p>
@@ -69,12 +49,9 @@
                 @endforeach
             </div>
             @if ($tab == 0)
-                <livewire:users.services.index :user_id="$user_id" />
+                <livewire:users.services.index :user="$user" />
             @endif
 
-            @if ($tab==1)
-                <livewire:users.portfolio.index :user_id="$user_id" />
-            @endif
         </div>
 
         <div>
